@@ -1,0 +1,58 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\ETL\{{PipelineName}};
+
+use Flow\ETL\FlowContext;
+use Flow\ETL\Row\Entries;
+use Pollora\Datamorph\Contracts\Transformer;
+
+class {{PipelineName}}Transformer extends Transformer
+{
+    /**
+     * Transform the extracted data.
+     *
+     * @param Entries $entries
+     * @param FlowContext $context
+     * @return array
+     */
+    public function handle(Entries $entries, FlowContext $context): array
+    {
+        $transformedRows = [];
+
+        // Implement data transformation logic here
+
+        return $transformedRows;
+    }
+
+    /**
+     * Method executed before transformation.
+     *
+     * @param mixed $dataframe
+     * @param FlowContext $context
+     * @return mixed
+     */
+    public function before(mixed $dataframe, FlowContext $context): mixed
+    {
+        // Logic to execute before transformation
+        // For example: data validation, pre-processing, etc.
+
+        return $dataframe;
+    }
+
+    /**
+     * Method executed after transformation.
+     *
+     * @param mixed $dataframe
+     * @param FlowContext $context
+     * @return mixed
+     */
+    public function after(mixed $dataframe, FlowContext $context): mixed
+    {
+        // Logic to execute after transformation
+        // For example: additional calculations, data enrichment, etc.
+
+        return $dataframe;
+    }
+}

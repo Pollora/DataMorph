@@ -1,0 +1,54 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\ETL\{{PipelineName}};
+
+use Flow\ETL\FlowContext;
+use Pollora\Datamorph\Contracts\Extractor;
+
+class {{PipelineName}}Extractor extends Extractor
+{
+    /**
+     * Extract data from the source.
+     *
+     * @param FlowContext $context
+     * @return array
+     */
+    public function handle(FlowContext $context): array
+    {
+        // Implement data extraction logic here
+
+        return [];
+    }
+
+    /**
+     * Method executed before extraction.
+     *
+     * @param mixed $dataframe
+     * @param FlowContext $context
+     * @return mixed
+     */
+    public function before(mixed $dataframe, FlowContext $context): mixed
+    {
+        // Logic to execute before extraction
+        // For example: prepare connections, validate source, etc.
+
+        return $dataframe;
+    }
+
+    /**
+     * Method executed after extraction.
+     *
+     * @param mixed $dataframe
+     * @param FlowContext $context
+     * @return mixed
+     */
+    public function after(mixed $dataframe, FlowContext $context): mixed
+    {
+        // Logic to execute after extraction
+        // For example: clean up, logging, etc.
+
+        return $dataframe;
+    }
+}

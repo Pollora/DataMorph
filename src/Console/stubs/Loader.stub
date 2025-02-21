@@ -1,0 +1,56 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\ETL\{{PipelineName}};
+
+use Flow\ETL\FlowContext;
+use Flow\ETL\Loader as FlowLoader;
+use Pollora\Datamorph\Contracts\Loader;
+
+class {{PipelineName}}Loader extends Loader
+{
+    /**
+     * Configure the loader for the transformed data.
+     *
+     * @param FlowContext $context
+     * @return FlowLoader
+     */
+    public function handle(FlowContext $context): FlowLoader
+    {
+        // Implement loading configuration here
+        // Return an instance of a Flow ETL loader
+
+        return to_memory();
+    }
+
+    /**
+     * Method executed before loading.
+     *
+     * @param mixed $dataframe
+     * @param FlowContext $context
+     * @return mixed
+     */
+    public function before(mixed $dataframe, FlowContext $context): mixed
+    {
+        // Logic to execute before loading
+        // For example: prepare destination, set up configuration, etc.
+
+        return $dataframe;
+    }
+
+    /**
+     * Method executed after loading.
+     *
+     * @param mixed $dataframe
+     * @param FlowContext $context
+     * @return mixed
+     */
+    public function after(mixed $dataframe, FlowContext $context): mixed
+    {
+        // Logic to execute after loading
+        // For example: clean up, notify stakeholders, etc.
+
+        return $dataframe;
+    }
+}
