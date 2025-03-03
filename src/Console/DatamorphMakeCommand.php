@@ -19,7 +19,7 @@ class DatamorphMakeCommand extends Command
     {
         $pipelineName = ucfirst($this->argument('pipeline'));
 
-        $basePath = config('datamorph.paths.etl').DIRECTORY_SEPARATOR.$pipelineName;
+        $basePath = config('datamorph.paths.etl', app_path('ETL')).DIRECTORY_SEPARATOR.$pipelineName;
 
         if (! file_exists($basePath)) {
             if (! mkdir($basePath, 0755, true) && ! is_dir($basePath)) {
