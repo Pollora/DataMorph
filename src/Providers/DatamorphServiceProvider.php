@@ -16,7 +16,7 @@ class DatamorphServiceProvider extends ServiceProvider
         // Publish the configuration
         $this->publishes([
             __DIR__.'/../../config/datamorph.php' => config_path('datamorph.php'),
-        ], 'config');
+        ], 'datamorph-config');
 
         // Register commands
         if ($this->app->runningInConsole()) {
